@@ -111,6 +111,9 @@ cfg_if! {
 
         mod switch;
         pub use switch::*;
+    } else if #[cfg(target_os = "optee")] {
+        mod optee;
+        pub use optee::*;
     } else if #[cfg(target_os = "psp")] {
         mod fixed_width_ints;
         pub use fixed_width_ints::*;
